@@ -105,29 +105,6 @@ int rotation(long long key, int addressSize)
     return foldShift(key, addressSize);
 }
 
-
-long int midSquare(long int seed)
-{
-    long long int product = seed * seed;
-    string convertSeed = to_string(seed);
-    string convertProduct = to_string(product);
-    int seedSize = convertSeed.size();
-    int productSize = convertProduct.size();
-    if (productSize > seedSize)
-    {
-        int numElim = (productSize - seedSize) / 2;
-        convertProduct.assign(convertProduct.substr(0, productSize - numElim));
-        convertProduct.assign(convertProduct.substr((int) convertProduct.size() - seedSize));
-        return stol(convertProduct, nullptr, 10);
-    }
-    return product;
-}
-
-long int moduloDivision(long int seed, long int mod)
-{
-    return (seed % mod);
-}
-
 long int midSquare(long int seed)
 {
     long long int temp = seed * seed;
